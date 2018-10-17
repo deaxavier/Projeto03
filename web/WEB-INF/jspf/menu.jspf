@@ -1,0 +1,16 @@
+<%-- any content can be specified here e.g.: --%>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ">
+      <a class="nav-item nav-link " href="home.jsp">Home</a>
+      <a class="nav-item nav-link " href="cadastroPessoa.jsp">Cadastro de Pessoa</a>
+      <a class="nav-item nav-link " href="cadastroCarro.jsp">Cadastro de Veículo</a>
+      <a class="nav-item nav-link " href="cadastroEmpresa.jsp">Cadastro de Empresa</a>
+    </div>
+  </div>
+</nav>

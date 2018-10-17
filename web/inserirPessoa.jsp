@@ -12,8 +12,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Inserir Nova Pessoa</title>
+        <%@include file="WEB-INF/jspf/head.jspf"%>
     </head>
-    
+    <body>
+        <%@include file="WEB-INF/jspf/header.jspf" %>
+        <%@include file="WEB-INF/jspf/menu.jspf" %>
         <h1>Cadastro Pessoa</h1>
         <h2>Insrir Nova Pessoa</h2>
         
@@ -41,7 +44,10 @@
             <input type="text" placeholder="E-mail" name="email"/>
             <input type="text" placeholder="Telefone" name="telefone"/>
             <br/><input type="submit" name="inserir" value="inseir"/>
-        </form>
+        </form><br>
+        <%@include file="WEB-INF/jspf/footer.jspf" %>
+    </body>
+        
         
          
 </html>

@@ -13,16 +13,19 @@
 <html>
     <head lang="pt-br">
 	<title>Cadastro de Pessoas</title>
+        <%@include file="WEB-INF/jspf/head.jspf"%>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="reset.css">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 	<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Montserrat|Raleway" rel="stylesheet">
     </head>
     <body>
+        <%@include file="WEB-INF/jspf/header.jspf" %>
+        <%@include file="WEB-INF/jspf/menu.jspf" %>
         <h1>Cadastro de Clientes</h1>
         <main>
             <h2>Lista</h2>
-            <a href="inserirPessoa.jsp">Inserir</a><hr/>
+            <a href="inserirPessoa.jsp">Inserir Novo</a><hr/>
             <table border = 1>
                 <tr>
                     <th>ID</th>
@@ -41,7 +44,7 @@
                     <td><%=c.getEmail()%></td>
                     <td><%=c.getTelefone()%></td>
                     <td>
-                        <a href="alterar.jsp?i=<%=i%>">
+                        <a href="alterarPessoa.jsp?i=<%=i%>">
                             <button>Alterar</button>
                         </a>
                         <a href="excluir.jsp?i=<%=i%>">
@@ -51,6 +54,7 @@
                 </tr>
                 <%}%>
             </table>
-        </main>
+        </main><br>
+        <%@include file="WEB-INF/jspf/footer.jspf" %>
     </body>      
 </html>

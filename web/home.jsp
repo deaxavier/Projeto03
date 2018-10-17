@@ -9,13 +9,15 @@
 <html>
     <head lang="pt-br">
 	<title>Projeto 3 - P.O.O</title>
+        <%@include file="WEB-INF/jspf/head.jspf"%>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="reset.css">
-	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" type="text/css" href="WEB-INF/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="WEB-INF/css/estilo.css">
 	<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Montserrat|Raleway" rel="stylesheet">
     </head>
     <body>
-	<main>
+        <%@include file="WEB-INF/jspf/header.jspf" %>
+        <%@include file="WEB-INF/jspf/menu.jspf" %>
             <h1>Projeto 3 - Cadastro</h1>
             <div>
                 <p>Projeto de Programacao Orientada a Objetos</p>
@@ -44,27 +46,8 @@
                             </li>
                         </ul>
                     
-            </div>
-        </main>
-        <aside>
-        <nav class="navegacao-site">
-            <h1>Menu</h1>
-            <ul>
-                <li><a href="cadastroPessoa.jsp">Cadastro Pessoa</a></li>
-                <li><a href="">Cadastro Empresa</a></li>
-                <li><a href="">Cadastro Veiculo</a></li>
-            </ul>
-        </nav>
-        <nav class="icones-sociais">
-            <ul>
-                <li><a class="github" href="https://github.com/deaxavier/Projeto03" target="_blank">GitHub</a></li>
-            </ul>
-        </nav>
-        </aside>
-
-        <footer>
-            &copy Andrea, Arthur, Lucas e Victoria - 2018
-        </footer>
+            </div><br>
+        <%@include file="WEB-INF/jspf/footer.jspf" %>
     </body>
     
 </html>

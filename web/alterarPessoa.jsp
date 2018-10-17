@@ -4,31 +4,41 @@
     Author     : deaxa
 --%>
 
-<%@page import="br.com.fatec.web.Contato"%>
-<%@page import="br.com.fatec.web.Db"%>
+
+<%@page import="br.com.fatec.projeto03.web.Db"%>
+<%@page import="br.com.fatec.projeto03.web.CadastroPessoa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Alterar</title>
+        <%@include file="WEB-INF/jspf/head.jspf"%>
     </head>
-    
-        <h1>WebContatos</h1>
+    <body>
+        <%@include file="WEB-INF/jspf/header.jspf" %>
+        <%@include file="WEB-INF/jspf/menu.jspf" %>
+        <h1>Alterar dados</h1>
         <h2>Alterar</h2>
         
-        <a href="lista.jsp">Lista</a><hr/>
+        <a href="cadastroPessoa.jsp">Lista de pessoas</a><hr/>
         <%
             int i = Integer.parseInt(request.getParameter("i"));
-            Contato c = Db.getContatos().get(i);
-            if(request.getParameter("alterar")!= null){
+            CadastroPessoa c = Db.getCadastroPessoa().get(i);
+            try{
+                if(request.getParameter("alterar")!= null){
                 String nome = request.getParameter("nome");
+                String cpf = request.getParameter("cpf");
                 String email = request.getParameter("email");
                 String telefone = request.getParameter("telefone");
-                c.setDados(nome, email, telefone);
-                Db.getContatos().set(i, c);
-                response.sendRedirect("lista.jsp");
+                c.setDadosPessoa(nome, cpf, email, telefone);
+                Db.getCadastroPessoa().set(i, c);
+                response.sendRedirect("cadastroPessoa.jsp");
+                }
+            }catch(Exception ex){
+                out.println("Dados Invalidos");
             }
+            
         %>
         <form>
             <b>indice: <%=i%></b><br/>
@@ -40,7 +50,10 @@
             Telefone: <br/>
             <input type="text" name="telefone" value="<%=c.getTelefone()%>"/><br/>
             <br/><input type="submit" name="alterar" value="Alterar"/>
-        </form>
+        </form><br>
+        <%@include file="WEB-INF/jspf/footer.jspf" %>
+    </body>
+        
         
          
 </html>
