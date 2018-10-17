@@ -41,13 +41,15 @@
             
         %>
         <form>
-            <b>indice: <%=i%></b><br/>
-            <input type="hidden" name="i" value="<%=i%>"/><br/>
-            Nome: <br/>
-            <input type="text" name="nome" value="<%=c.getNome()%>"/><br/>
-            Email: <br/>
-            <input type="text" name="email" value="<%=c.getEmail()%>"/><br/>
-            Telefone: <br/>
+            <b>indice: <%=i%></b><br>
+            <input type="hidden" name="i" value="<%=i%>"/>
+            <b>Nome:</b>
+            <input type="text" name="nome" value="<%=c.getNome()%>"/>
+            <b>CPF:</b>
+            <input type="text" name="cpf" value="<%=c.getCpf()%>"/>
+            <b>e-mail:</b>
+            <input type="text" name="email" value="<%=c.getEmail()%>"/>
+            <b>Telefone:</b>
             <input type="text" name="telefone" value="<%=c.getTelefone()%>"/><br/>
             <br/><input type="submit" name="alterar" value="Alterar"/>
         </form><br>
