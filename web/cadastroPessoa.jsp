@@ -47,7 +47,7 @@
                         <a href="alterarPessoa.jsp?i=<%=i%>">
                             <button>Alterar</button>
                         </a>
-                        <a href="excluir.jsp?i=<%=i%>">
+                        <a href="excluirPessoa.jsp?i=<%=i%>">
                             <button>Excluir</button>
                         </a>
                     </td>
