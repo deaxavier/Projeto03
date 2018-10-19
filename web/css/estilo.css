@@ -119,10 +119,30 @@ nav h1{
 	background-image: url(../img/github.png);
 }
 
-
 footer{
 	clear: both;
 	text-align: center;
 	padding: 60px;
 	padding: 3.75rem;
+}
+
+td, th{
+        text-align: center;
+}
+
+.th-pessoa, .td-pessoa{
+    font-size: 20px;
+    padding: 15px;
+}
+
+.td-empresa, .th-empresa{
+    font-size: 19px;
+    padding: 5px;
+}
+
+button, .input{
+    background-color: #3A5FCD;
+    color: #FFF;
+    font-size: 15px;
+    padding: 5px 12px 5px 12px;
 }
