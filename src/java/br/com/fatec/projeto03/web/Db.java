@@ -51,8 +51,8 @@ public class Db {
     }
     
     public static ArrayList<CadastroCarro> getCadastroCarro(){
-        if(cadastroEmpresa == null){
-            cadastroEmpresa = new ArrayList<>();
+        if(cadastroCarro == null){
+            cadastroCarro = new ArrayList<>();
             
             CadastroCarro c1 = new CadastroCarro();
             c1.setDadosCarro("ABC1234", "Carro1", "modelo1", "Cor1");
