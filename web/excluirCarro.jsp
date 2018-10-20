@@ -1,11 +1,11 @@
 <%-- 
-    Document   : excluirEmpresa
-    Created on : 18/10/2018, 20:53:12
-    Author     : Lucas
+    Document   : excluirCarro
+    Created on : 19/10/2018, 20:53:12
+    Author     : Arthur
 --%>
 
 <%@page import="br.com.fatec.projeto03.web.Db"%>
-<%@page import="br.com.fatec.projeto03.web.CadastroEmpresa"%>
+<%@page import="br.com.fatec.projeto03.web.CadastroCarro"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,26 +17,26 @@
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
         <%@include file="WEB-INF/jspf/menu.jspf" %>
-        <h1>Excluir Empresa</h1>
+        <h1>Excluir Veículo</h1>
         <h2>Excluir</h2>
         
-        <a href="cadastroEmpresa.jsp">Lista de Empresas</a><hr/>
+        <a href="cadastroCarro.jsp">Lista de Veículos</a><hr/>
         <%
             int i = Integer.parseInt(request.getParameter("i"));
-            CadastroEmpresa empresa = Db.getCadastroEmpresa().get(i);
+            CadastroCarro carro = Db.getCadastroCarro().get(i);
             if(request.getParameter("excluir")!= null){
-                Db.getCadastroEmpresa().remove(i);
-                response.sendRedirect("cadastroEmpresa.jsp");
+                Db.getCadastroCarro().remove(i);
+                response.sendRedirect("cadastroCarro.jsp");
             }
         %>
         <form>
             <b>Índice: <%=i%></b><br/>
             <input type="hidden" name="i" value="<%=i%>"/><br/>
-            <p>Nome Fantasia: <b><%=empresa.getNomeFantasia()%></b><br/></p>
-            <p>Razão Social: <b><%=empresa.getRazaoSocial()%></b><br/></p>
-            <p>CNPJ: <b><%=empresa.getCnpj()%></b><br/></p>
-            <p>Telefone: <b><%=empresa.getTelefone()%></b><br/></p>
-            <p>Web Site: <b><%=empresa.getWebSite()%></b><br/></p>
+            <p>Placa: <b><%=carro.getPlaca()%></b><br/></p>
+            <p>Marca: <b><%=carro.getMarca()%></b><br/></p>
+            <p>Modelo: <b><%=carro.getModelo()%></b><br/></p>
+            <p>Cor: <b><%=carro.getCor()%></b><br/></p>
+           
             <br/><input type="submit" name="excluir" value="Confirmar Exclusão"/>
         </form><br>
         <%@include file="WEB-INF/jspf/footer.jspf" %>
