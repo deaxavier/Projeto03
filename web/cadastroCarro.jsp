@@ -28,6 +28,7 @@
             <a href="inserirCarro.jsp">Inserir Novo</a><hr/>
             <table border = 1>
                 <tr>
+                    <th>ID</th>
                     <th>Placa</th>
                     <th>Marca</th>
                     <th>Modelo</th>
