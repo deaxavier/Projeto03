@@ -8,7 +8,7 @@
 <%@page import="br.com.fatec.projeto03.web.CadastroCarro"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Excluir</title>
@@ -17,10 +17,15 @@
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
         <%@include file="WEB-INF/jspf/menu.jspf" %>
+        
+        <div class="col-12 text-center">
         <h1>Excluir Veículo</h1>
         <h2>Excluir</h2>
         
-        <a href="cadastroCarro.jsp">Lista de Veículos</a><hr/>
+        <a class="btn btn-primary" href="cadastroCarro.jsp">Lista de Veículos</a><hr/>
+        
+        </div>
+        
         <%
             int i = Integer.parseInt(request.getParameter("i"));
             CadastroCarro carro = Db.getCadastroCarro().get(i);
@@ -29,16 +34,25 @@
                 response.sendRedirect("cadastroCarro.jsp");
             }
         %>
+        
+         <div class="container py-5">
+                     <div class="row">
+                         <div class="col-12 text-center">
         <form>
-            <b>Índice: <%=i%></b><br/>
+           
             <input type="hidden" name="i" value="<%=i%>"/><br/>
             <p>Placa: <b><%=carro.getPlaca()%></b><br/></p>
             <p>Marca: <b><%=carro.getMarca()%></b><br/></p>
             <p>Modelo: <b><%=carro.getModelo()%></b><br/></p>
             <p>Cor: <b><%=carro.getCor()%></b><br/></p>
            
-            <br/><input type="submit" name="excluir" value="Confirmar Exclusão"/>
+            <br/><input class="btn btn-danger" type="submit" name="excluir" value="Confirmar Exclusão"/>
         </form><br>
+        
+             </div>
+            </div>
+        </div>
+            
         <%@include file="WEB-INF/jspf/footer.jspf" %>
     </body>
 </html>

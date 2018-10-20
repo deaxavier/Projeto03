@@ -15,18 +15,20 @@
 	<title>Cadastro de Empresas</title>
         <%@include file="WEB-INF/jspf/head.jspf"%>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-	<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Montserrat|Raleway" rel="stylesheet">
+
     </head>
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
         <%@include file="WEB-INF/jspf/menu.jspf" %>
         <h1>Cadastro de Empresas</h1>
         <main>
+            <div class="col-12 text-center">
             <h2>Lista</h2>
-            <a href="inserirEmpresa.jsp">Inserir Novo</a><hr/>
-            <table border = 1>
+            <a class="btn btn-primary" href="inserirEmpresa.jsp">Inserir Novo</a>
+            </div>
+            
+            <div class="container py-5">
+            <table class="table table-dark">
                 <tr>
                     <th>ID</th>
                     <th>Nome Fantasia</th>
@@ -46,16 +48,17 @@
                     <td><%=empresa.getTelefone()%></td>
                     <td><%=empresa.getWebSite()%></td>
                     <td>
-                        <a href="alterarEmpresa.jsp?i=<%=i%>">
-                            <button>Alterar</button>
+                        <a class="btn btn-primary" href="alterarEmpresa.jsp?i=<%=i%>">
+                            Alterar
                         </a>
-                        <a href="excluirEmpresa.jsp?i=<%=i%>">
-                            <button>Excluir</button>
+                        <a class="btn btn-danger" href="excluirEmpresa.jsp?i=<%=i%>">
+                            Excluir
                         </a>
                     </td>
                 </tr>
                 <%}%>
             </table>
+            </div>
         </main><br>
         <%@include file="WEB-INF/jspf/footer.jspf" %>
     </body>      

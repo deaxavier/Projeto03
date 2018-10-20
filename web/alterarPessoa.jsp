@@ -9,7 +9,7 @@
 <%@page import="br.com.fatec.projeto03.web.CadastroPessoa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Alterar</title>
@@ -18,10 +18,13 @@
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
         <%@include file="WEB-INF/jspf/menu.jspf" %>
-        <h1>Alterar dados</h1>
-        <h2>Alterar</h2>
         
-        <a href="cadastroPessoa.jsp">Lista de pessoas</a><hr/>
+        <div class="col-12 text-center">
+            <h1>Alterar dados</h1>
+            <h2>Alterar</h2>
+            <a class="btn btn-primary" href="cadastroPessoa.jsp">Lista de pessoas</a><hr/>
+        </div>
+        
         <%
             int i = Integer.parseInt(request.getParameter("i"));
             CadastroPessoa c = Db.getCadastroPessoa().get(i);
@@ -40,19 +43,31 @@
             }
             
         %>
+        
+        <div class="container py-5">
+                     <div class="row">
+                         <div class="col-12 text-center">
         <form>
-            <b>indice: <%=i%></b><br>
+ 
             <input type="hidden" name="i" value="<%=i%>"/>
-            <b>Nome:</b>
-            <input type="text" name="nome" value="<%=c.getNome()%>"/>
-            <b>CPF:</b>
-            <input type="text" name="cpf" value="<%=c.getCpf()%>"/>
-            <b>e-mail:</b>
-            <input type="text" name="email" value="<%=c.getEmail()%>"/>
-            <b>Telefone:</b>
-            <input type="text" name="telefone" value="<%=c.getTelefone()%>"/><br/>
-            <br/><input type="submit" name="alterar" value="Alterar"/>
-        </form><br>
+            <b>Nome:</b><br>
+            <input type="text" name="nome" value="<%=c.getNome()%>"/><br>
+            <b>CPF:</b><br>
+            <input type="text" name="cpf" value="<%=c.getCpf()%>"/><br>
+            <b>e-mail:</b><br>
+            <input type="text" name="email" value="<%=c.getEmail()%>"/><br>
+            <b>Telefone:</b><br>
+            <input type="text" name="telefone" value="<%=c.getTelefone()%>"/><br>
+            
+            <br>
+            
+            <input type="submit" name="alterar" value="Alterar"/>
+        </form>
+        
+                 </div>
+            </div>
+        </div>
+        
         <%@include file="WEB-INF/jspf/footer.jspf" %>
     </body>
         

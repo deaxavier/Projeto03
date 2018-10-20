@@ -8,19 +8,22 @@
 <%@page import="br.com.fatec.projeto03.web.CadastroCarro"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head lang="pt-br">
-	<title>Projeto 3 - P.O.O</title>
+<html lang="pt-br">
+    <head >
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Inserir Novo Veículo</title>
         <%@include file="WEB-INF/jspf/head.jspf"%>
     </head>
     <body>
-        <main>
-            <%@include file="WEB-INF/jspf/header.jspf"%>
-            <div>
-                <h2>Cadastro Veículo</h2>
-                <h3>Inserir Novo Veículo</h3>
-
-                <a href="cadastroCarro.jsp">Lista de Veículos</a><hr/>
+             <%@include file="WEB-INF/jspf/header.jspf" %>
+             <%@include file="WEB-INF/jspf/menu.jspf" %>
+             
+            <div class="col-12 text-center">
+                <h3 class="text-center pt-4">Inserir Novo Veículo</h3>
+                <a href="cadastroCarro.jsp" class="btn btn-primary my-4">Lista de Veículos</a>
+            </div>
+                
+                
                 <%
                     try{
                         if(request.getParameter("inserir")!= null){
@@ -39,19 +42,25 @@
                     }
 
                 %>
+                
+                 <div class="container py-5">
+                     <div class="row">
+                         <div class="col-12 text-center">
                 <form>
-                    <input type="text" placeholder="Placa" name="placa"/><br>
-                    <input type="text" placeholder="Marca" name="marca"/><br>
-                    <input type="text" placeholder="Modelo" name="modelo"/><br>
-                    <input type="text" placeholder="Cor" name="cor"/><br>
+                    <input type="text" placeholder="Placa" name="placa"/>
+                    <input type="text" placeholder="Marca" name="marca"/>
+                    <input type="text" placeholder="Modelo" name="modelo"/>
+                    <input type="text" placeholder="Cor" name="cor"/>
 
-                    <br/><input type="submit" name="inserir" value="inserir"/><br>
+                   <input type="submit" name="inserir" value="inserir"/>
+                   
                 </form>
+                </div>
             </div>
-        </main>
+        </div>
+        
     </body>
        
-        <%@include file="WEB-INF/jspf/menu.jspf"%>
-	<%@include file="WEB-INF/jspf/footer.jspf"%>
+<%@include file="WEB-INF/jspf/footer.jspf"%>
 
 </html>

@@ -15,44 +15,47 @@
 	<title>Cadastro de Veículos</title>
         <%@include file="WEB-INF/jspf/head.jspf"%>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="reset.css">
-	<link rel="stylesheet" type="text/css" href="estilo.css">
-	<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Montserrat|Raleway" rel="stylesheet">
+
     </head>
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
         <%@include file="WEB-INF/jspf/menu.jspf" %>
         <h1>Cadastro de Veículos</h1>
         <main>
-            <h2>Lista</h2>
-            <a href="inserirCarro.jsp">Inserir Novo</a><hr/>
-            <table border = 1>
+            <div class="col-12 text-center">
+                <h2>Lista</h2>
+                <a class="btn btn-primary" href="inserirCarro.jsp">Inserir Novo</a>              
+            </div>
+
+            <div class="container py-5">
+            <table class="table table-dark">
                 <tr>
-                    <th>ID</th>
-                    <th>Placa</th>
-                    <th>Marca</th>
-                    <th>Modelo</th>
-                    <th>Cor</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Placa</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Cor</th>
                 </tr>
                 <%for(CadastroCarro c: Db.getCadastroCarro()){%>
                 <%int i = Db.getCadastroCarro().indexOf(c);%>
                 <tr>
-                    <td><%=i%></td>
+                    <td scope="row"><%=i%></td>
                     <td><%=c.getPlaca()%></td>
                     <td><%=c.getMarca()%></td>
                     <td><%=c.getModelo()%></td>
                     <td><%=c.getCor()%></td>
                     <td>
-                        <a href="alterarCarro.jsp?i=<%=i%>">
-                            <button>Alterar</button>
+                        <a class="btn btn-primary" href="alterarCarro.jsp?i=<%=i%>">
+                            Alterar
                         </a>
-                        <a href="excluirCarro.jsp?i=<%=i%>">
-                            <button>Excluir</button>
+                        <a class="btn btn-danger" href="excluirCarro.jsp?i=<%=i%>">
+                            Excluir
                         </a>
                     </td>
                 </tr>
                 <%}%>
             </table>
+            </div>
         </main><br>
         <%@include file="WEB-INF/jspf/footer.jspf" %>
     </body>      

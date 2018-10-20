@@ -8,18 +8,24 @@
 <%@page import="br.com.fatec.projeto03.web.CadastroCarro"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
+           
         <title>Alterar</title>
         <%@include file="WEB-INF/jspf/head.jspf"%>
+          
     </head>
     <body>
+        
         <%@include file="WEB-INF/jspf/header.jspf" %>
         <%@include file="WEB-INF/jspf/menu.jspf" %>
-        <h1>Alterar Dados</h1>
-        <h2>Alterar</h2>
         
-        <a href="cadastroCarro.jsp">Lista de Veículos</a><hr/>
+        <div class="col-12 text-center">
+            <h1>Alterar Dados</h1>
+            <h2>Alterar</h2>
+            <a class="btn btn-primary" href="cadastroCarro.jsp">Lista de Veículos</a><hr/>
+        </div>
+        
         <%
             int i = Integer.parseInt(request.getParameter("i"));
             CadastroCarro carro = Db.getCadastroCarro().get(i);
@@ -39,20 +45,30 @@
             }
             
         %>
+        
+          <div class="container py-5">
+                     <div class="row">
+                         <div class="col-12 text-center">
         <form>
-            <b>Índice: <%=i%></b><br>
+          
             <input type="hidden" name="i" value="<%=i%>"/>
-            <b>Placa:</b>
-            <input type="text" name="placa" value="<%=carro.getPlaca()%>"/>
-            <b>Marca:</b>
-            <input type="text" name="marca" value="<%=carro.getMarca()%>"/>
-            <b>Modelo:</b>
-            <input type="text" name="modelo" value="<%=carro.getModelo()%>"/>
-            <b>Cor:</b>
-            <input type="text" name="cor" value="<%=carro.getCor()%>"/><br/>
+            <b>Placa:</b><br>
+            <input type="text" name="placa" value="<%=carro.getPlaca()%>"/><br>
+            <b>Marca:</b><br>
+            <input type="text" name="marca" value="<%=carro.getMarca()%>"/><br>
+            <b>Modelo:</b><br>
+            <input type="text" name="modelo" value="<%=carro.getModelo()%>"/><br>
+            <b>Cor:</b><br>
+            <input type="text" name="cor" value="<%=carro.getCor()%>"/><br>
 
-            <br/><input type="submit" name="alterar" value="Alterar"/>
-        </form><br>
+            <input type="submit" name="alterar" value="Alterar"/>
+        </form>
+            
+               </div>
+            </div>
+        </div>
+            
+            
         <%@include file="WEB-INF/jspf/footer.jspf" %>
     </body>
         

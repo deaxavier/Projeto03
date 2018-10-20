@@ -8,7 +8,7 @@
 <%@page import="br.com.fatec.projeto03.web.CadastroPessoa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Inserir Nova Pessoa</title>
@@ -17,10 +17,17 @@
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
         <%@include file="WEB-INF/jspf/menu.jspf" %>
-        <h1>Cadastro Pessoa</h1>
-        <h2>Insrir Nova Pessoa</h2>
         
-        <a href="cadastroPessoa.jsp">Lista de Pessoas</a><hr/>
+        <div class="col-12 text-center">
+              <h2 class="text-center pt-4">Inserir Nova Pessoa</h2>
+        
+        <a href="cadastroPessoa.jsp" class="btn btn-primary my-4">Lista de Pessoas</a>
+        </div>
+        
+        
+            
+       
+      
         <%
             try{
                 if(request.getParameter("inserir")!= null){
@@ -38,13 +45,23 @@
             }
             
         %>
+        
+       <div class="container py-5">
+            <div class="row">
+                <div class="col-12 text-center">
+                    
+         
+        
         <form>
             <input type="text" placeholder="Nome" name="nome"/>
             <input type="text" placeholder="CPF" name="cpf"/>
             <input type="text" placeholder="E-mail" name="email"/>
             <input type="text" placeholder="Telefone" name="telefone"/>
-            <br/><input type="submit" name="inserir" value="inseir"/>
-        </form><br>
+            <input type="submit" name="inserir" value="inserir"/>
+        </form>
+                  </div>
+            </div>
+        </div>
         <%@include file="WEB-INF/jspf/footer.jspf" %>
     </body>
         
